@@ -64,6 +64,7 @@
             @if (auth()->user()->isAdmin())
                 <a href="{{ route('dashboard') }}" class="nav-link-comedor">Dashboard</a>
                 <a href="{{ route('users.index') }}" class="nav-link-comedor">Usuarios</a>
+                <a href="{{ route('categories.index') }}" class="nav-link-comedor">Categorías</a>
                 <a href="{{ route('products.index') }}" class="nav-link-comedor">Inventario</a>
                 <a href="{{ route('reports.index') }}" class="nav-link-comedor">Reportes</a>
             @endif
