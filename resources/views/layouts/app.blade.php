@@ -13,6 +13,7 @@
             @if (auth()->user()->isAdmin())
                 <a href="{{ route('dashboard') }}" class="text-white me-3">Dashboard</a>
                 <a href="{{ route('users.index') }}" class="text-white me-3">Usuarios</a>
+                <a href="{{ route('categories.index') }}" class="text-white me-3">Categorías</a>
                 <a href="{{ route('products.index') }}" class="text-white me-3">Inventario</a>
                 <a href="{{ route('reports.index') }}" class="text-white me-3">Reportes</a>
             @endif

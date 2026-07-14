@@ -23,6 +23,7 @@ Route::middleware(['auth', 'inactivity'])->group(function () {
         Route::resource('products', ProductController::class)->except(['show']);
         Route::post('/products/{product}/stock', [ProductController::class, 'adjustStock'])->name('products.stock');
         Route::get('/reportes', [ReportController::class, 'index'])->name('reports.index');
+        Route::resource('categories', \App\Http\Controllers\CategoryController::class)->except(['show', 'edit']);
     });
 
     // Admin + Trabajador (Persona B)
