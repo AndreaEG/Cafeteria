@@ -156,7 +156,6 @@
                     </div>
                     <button type="submit" class="btn-login-comedor">LOGIN</button>
                 </form>
-                <a href="#" class="forgot-link">¿Olvidé mi contraseña?</a>
             </div>
         </div>
     </div>

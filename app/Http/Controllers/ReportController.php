@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sale;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ReportController extends Controller
 {
@@ -12,8 +13,11 @@ class ReportController extends Controller
         $from = $request->get('from', now()->startOfMonth()->toDateString());
         $to   = $request->get('to', now()->toDateString());
 
+        $fromDate = Carbon::parse($from)->startOfDay();
+        $toDate   = Carbon::parse($to)->endOfDay();
+
         $sales = Sale::with('details.product')
-            ->whereBetween('created_at', [$from, $to])
+            ->whereBetween('created_at', [$fromDate, $toDate])
             ->get();
 
         $totalVentas = $sales->sum('total');

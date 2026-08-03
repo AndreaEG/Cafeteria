@@ -96,6 +96,21 @@
         color: #fff;
         transform: translateY(-2px);
     }
+
+    .alert-errors {
+        background: #FDECEA;
+        border: 1px solid #F5C2C0;
+        color: #8A2E28;
+        border-radius: 9px;
+        padding: 14px 18px;
+        margin-bottom: 20px;
+        max-width: 520px;
+    }
+
+    .alert-errors ul {
+        margin: 0;
+        padding-left: 20px;
+    }
 </style>
 
 <div class="dashboard-bg">
@@ -104,21 +119,31 @@
         <h2>Nuevo Usuario</h2>
     </div>
 
+    @if ($errors->any())
+        <div class="alert-errors">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="form-comedor-wrapper">
         <form method="POST" action="{{ route('users.store') }}">
             @csrf
             <div class="mb-3">
                 <label>Nombre</label>
-                <input type="text" name="name" class="form-control" required>
+                <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
             </div>
             <div class="mb-3">
                 <label>Correo</label>
-                <input type="email" name="email" class="form-control" required>
+                <input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
             </div>
             <div class="mb-3">
                 <label>Contraseña</label>
                 <input type="password" name="password" class="form-control" required>
-                <small class="text-muted">Mínimo 10 caracteres, 1 mayúscula y 1 carácter especial.</small>
+                <small class="text-muted">Mínimo 5 caracteres y 1 mayúscula.</small>
             </div>
             <div class="mb-3">
                 <label>Confirmar Contraseña</label>
@@ -127,8 +152,8 @@
             <div class="mb-3">
                 <label>Rol</label>
                 <select name="role" class="form-select" required>
-                    <option value="trabajador">Trabajador</option>
-                    <option value="admin">Administrador</option>
+                    <option value="trabajador" {{ old('role') == 'trabajador' ? 'selected' : '' }}>Trabajador</option>
+                    <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Administrador</option>
                 </select>
             </div>
             <button class="btn-comedor-primary">Guardar</button>
