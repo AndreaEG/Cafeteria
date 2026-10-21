@@ -155,7 +155,7 @@
 <div class="dashboard-bg">
 
     <div class="page-header">
-        <h2>Catálogo de estos Productos</h2>
+        <h2>Catálogo de Productos</h2>
         <a href="{{ route('products.create') }}" class="btn-comedor-primary">+ Nuevo Producto</a>
     </div>
 
