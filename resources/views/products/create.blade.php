@@ -122,7 +122,7 @@
 <div class="dashboard-bg">
 
     <div class="page-header">
-        <h2>Nuevo Producto</h2>
+        <h2>Nuevos Productos</h2>
     </div>
 
     <div class="form-comedor-wrapper">
