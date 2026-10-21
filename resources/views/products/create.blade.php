@@ -161,7 +161,7 @@
                     <input type="number" name="stock" class="form-control" required>
                 </div>
                 <div class="col mb-3">
-                    <label>Stock mínimo (alerta)</label>
+                    <label>Stock mínimo</label>
                     <input type="number" name="min_stock" class="form-control" value="5">
                 </div>
             </div>
