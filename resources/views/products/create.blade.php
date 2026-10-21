@@ -173,7 +173,7 @@
                 <label>Imagen</label>
                 <input type="file" name="image" class="form-control" accept=".jpg,.jpeg,.png,.webp">
             </div>
-            <button class="btn-comedor-primary">Guardar</button>
+            <button class="btn-comedor-primary">Guardar ptm</button>
         </form>
     </div>
 
